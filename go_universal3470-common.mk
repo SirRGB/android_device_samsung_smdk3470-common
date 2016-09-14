@@ -16,6 +16,12 @@
 
 # Sets Android Go default values for properties specific for universal3470-common
 
+# Dex2oat limits
+PRODUCT_PROPERTY_OVERRIDES += \
+     dalvik.vm.boot-dex2oat-threads=4 \
+     dalvik.vm.dex2oat-threads=2 \
+     dalvik.vm.image-dex2oat-threads=4
+
 # Set lowram options
 PRODUCT_PROPERTY_OVERRIDES += \
      dalvik.vm.debug.alloc=0 \

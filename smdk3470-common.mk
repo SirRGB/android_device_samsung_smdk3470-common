@@ -204,11 +204,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-# Art
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-threads=1 \
-    dalvik.vm.image-dex2oat-threads=1
-
 # disable hwc script
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/disablehwc.sh:system/vendor/bin/disablehwc.sh \
