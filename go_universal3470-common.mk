@@ -18,6 +18,7 @@
 
 # Set lowram options
 PRODUCT_PROPERTY_OVERRIDES += \
+     dalvik.vm.debug.alloc=0 \
      ro.config.low_ram=false \
      ro.lmk.critical_upgrade=true \
      ro.lmk.upgrade_pressure=40 \
