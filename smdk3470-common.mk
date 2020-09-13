@@ -94,7 +94,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-impl \
     android.hardware.wifi@1.0-service \
     libwpa_client \
-    macloader \
     hostapd \
     wificond \
     wifilogd \
