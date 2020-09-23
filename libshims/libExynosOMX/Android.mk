@@ -41,7 +41,7 @@ LOCAL_C_INCLUDES := \
     hardware/samsung_slsi-cm/exynos3470/exynos_omx/openmax/exynos_omx/osal/ \
     $(TOP)/frameworks/native/libs/nativewindow/include
 
-LOCAL_HEADER_LIBRARIES := generated_kernel_headers
+#LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
 LOCAL_MODULE := libExynosOMX_shim
 LOCAL_MODULE_TAGS := optional

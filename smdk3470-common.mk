@@ -16,6 +16,10 @@
 
 COMMON_PATH := device/samsung/smdk3470-common
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
+
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 # HIDL
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
@@ -62,8 +66,6 @@ PRODUCT_PACKAGES += \
     Snap \
     camera.universal3470 \
     camera.vendor.universal3470 \
-    android.hardware.camera.provider@2.4-impl-legacy \
-    android.hardware.camera.provider@2.4-service.universal3470 \
     libshim_camera
 
 # DRM
@@ -90,18 +92,16 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0 \
-    android.hardware.wifi@1.0-impl \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi@1.0.legacy \
     libwpa_client \
     hostapd \
     wificond \
     wifilogd \
     wpa_supplicant \
-    wifiloader
+    wifiloader \
+    macloader
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
 
@@ -125,11 +125,6 @@ PRODUCT_COPY_FILES += \
 # FlipFlap
 #PRODUCT_PACKAGES += \
 #   FlipFlap
-
-# IPv6 tethering
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes
 
 # libstlport (only copies a prebuilt lib since oreo)
 #PRODUCT_PACKAGES += \
@@ -194,9 +189,6 @@ PRODUCT_PACKAGES += \
     libui_shim \
     libExynosOMX_shim \
     libstagefrighthw
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/android.hardware.media.omx@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.omx@1.0-service.rc
 
 # USB Accesory
 PRODUCT_PACKAGES += \
