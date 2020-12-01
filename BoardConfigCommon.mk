@@ -127,6 +127,10 @@ TARGET_OMX_LEGACY_RESCALING := true
 # Sensors (libgui crashes otherwise if SENSOR_PERMISSION_BODY_SENSORS is defined by a sensor)
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
+# VNDK
+# Dedupe VNDK libraries with identical core variants.
+TARGET_VNDK_USE_CORE_VARIANT := true
+
 # WFD
 BOARD_USES_WFD_SERVICE := true
 
