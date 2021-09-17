@@ -209,5 +209,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-threads=1 \
     dalvik.vm.image-dex2oat-threads=1
 
+# disable hwc script
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/disablehwc.sh:system/vendor/bin/disablehwc.sh \
+    $(LOCAL_PATH)/configs/disablehwc.rc:system/vendor/etc/init/disablehwc.rc
+
 # Build with specific settings for universal3470-common
 $(call inherit-product, $(LOCAL_PATH)/go_universal3470-common.mk)
