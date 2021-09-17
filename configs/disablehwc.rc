@@ -1,0 +1,3 @@
+service param /system/vendor/bin/disablehwc.sh
+    class main
+    oneshot
