@@ -128,6 +128,10 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += \
 #    libstlport
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # RIL
 PRODUCT_PACKAGES += \
     libsecril-client \
