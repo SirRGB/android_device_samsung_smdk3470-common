@@ -62,8 +62,6 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Gallery2 \
-    Snap \
     camera.universal3470 \
     camera.vendor.universal3470 \
     libshim_camera
